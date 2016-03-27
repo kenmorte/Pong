@@ -11,6 +11,10 @@ public:
 
     Point(int x, int y);
 
+    void set_x(int x);
+
+    void set_y(int y);
+
     void set_coordinates(int x, int y);
 
     int get_x() const;
