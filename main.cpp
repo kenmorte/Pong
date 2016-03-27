@@ -9,8 +9,7 @@
 #include "movingball.h"
 #include "model.h"
 #include "paddle.h"
-
-typedef QGraphicsView View;
+#include "view.h"
 
 int main(int argc, char *argv[])
 {
@@ -23,22 +22,14 @@ int main(int argc, char *argv[])
 
     // create an item to put into scene
     MovingBall* ball = new MovingBall(model.get_width()/2, model.get_height()/2);
-    Paddle* paddleLeft = new Paddle();
 
     // make rect focusable
-    paddleLeft->setFlag(QGraphicsItem::ItemIsFocusable);
-    paddleLeft->setFocus();
 
     // add item to scene
     scene->addItem(ball);
-    scene->addItem(paddleLeft);
 
 
     View* view = new View(scene);
-
-    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view->setSceneRect(0,0,model.get_width(),model.get_height());
     view->show();
 
 //    MainWindow w;
