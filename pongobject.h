@@ -9,6 +9,13 @@ namespace Pong
     const double RADIUS = 10;
     const double SPEED = 10;
     const double ANGLE = rand();
+
+    const double WINDOW_WIDTH = 200;
+    const double WINDOW_HEIGHT = 200;
+
+    const double PADDLE_WIDTH = 10;
+    const double PADDLE_HEIGHT = 50;
+    const double PADDLE_SPEED = 10;
 }
 
 class PongObject
