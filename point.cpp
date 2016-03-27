@@ -12,6 +12,16 @@ Point::Point(int x, int y)
 {
 }
 
+void Point::set_x(int new_x)
+{
+    x = new_x;
+}
+
+void Point::set_y(int new_y)
+{
+    y = new_y;
+}
+
 std::string Point::str() const {
     std::ostringstream result;
     result << "Point(" << x << "," << y << ")";
