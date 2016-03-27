@@ -18,12 +18,6 @@ void Paddle::keyPressEvent(QKeyEvent *event)
         move_up();
 }
 
-QGraphicsRectItem *&Paddle::get_paddle_rect()
-{
-    return paddle;
-
-}
-
 void Paddle::move_down()
 {
     const double bottom_y = coordinates.get_y() + height;
