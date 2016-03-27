@@ -15,8 +15,6 @@ public:
 
     void timerEvent();
 
-    QGraphicsRectItem*& get_paddle_rect();
-
     void move_down();
 
     void move_up();
