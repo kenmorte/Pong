@@ -8,6 +8,7 @@
 #include "point.h"
 #include "movingball.h"
 #include "model.h"
+#include "paddle.h"
 
 typedef QGraphicsView View;
 
@@ -22,9 +23,15 @@ int main(int argc, char *argv[])
 
     // create an item to put into scene
     MovingBall* ball = new MovingBall(model.get_width()/2, model.get_height()/2);
+    Paddle* paddleLeft = new Paddle();
+
+    // make rect focusable
+    paddleLeft->setFlag(QGraphicsItem::ItemIsFocusable);
+    paddleLeft->setFocus();
 
     // add item to scene
     scene->addItem(ball);
+    scene->addItem(paddleLeft);
 
 
     View* view = new View(scene);
