@@ -9,15 +9,15 @@ class Paddle: public PongObject, public QGraphicsRectItem
 public:
     Paddle();
 
-    void keyPressEvent(QKeyEvent* event);
-
-    void keyReleaseEvent(QKeyEvent *event);
-
     void timerEvent();
 
     void move_down();
 
     void move_up();
+
+    void set_moving_down(bool moving_down);
+
+    void set_moving_up(bool moving_up);
 
     void resize(int new_width, int new_height);
 
