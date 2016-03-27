@@ -9,12 +9,12 @@ Paddle::Paddle()
     this->setRect(coordinates.get_x(), coordinates.get_y(), width, height);
 }
 
-void Paddle::keyPressEvent(QKeyEvent *event)
+void Paddle::timerEvent()
 {
-    std::cout << "Key Pressed" << std::endl;
-    if (event->key() == Qt::Key_Down)
+    if (is_moving_down)
         move_down();
-    else if (event->key() == Qt::Key_Up)
+
+    if (is_moving_up)
         move_up();
 }
 
@@ -35,6 +35,16 @@ void Paddle::move_up()
         coordinates.set_y(coordinates.get_y() - Pong::PADDLE_SPEED);
         setPos( coordinates.get_x(), coordinates.get_y() );
     }
+}
+
+void Paddle::set_moving_down(bool moving_down)
+{
+    is_moving_down = moving_down;
+}
+
+void Paddle::set_moving_up(bool moving_up)
+{
+    is_moving_up = moving_up;
 }
 
 void Paddle::resize(int new_width, int new_height)
